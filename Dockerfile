@@ -8,7 +8,7 @@ ARG GID=1000
 # Install packages required to build
 RUN apk add --no-cache wget jq
 
-# Download Waterfall: waterfall.jar
+# Download Paper: paper.jar
 ADD ./download-paper.sh /build/
 RUN /build/download-paper.sh
 
