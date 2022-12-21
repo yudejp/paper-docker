@@ -8,13 +8,13 @@ services:
 
   paper:
     container_name: paper
-    image: ghcr.io/takagi-minecraft-lab/paper
+    image: ghcr.io/yudejp/paper-docker:master
     volumes:
       - ./paper:/app
     tty: true
     stdin_open: true
     environment:
-      JAVA_OPTS: "-Xms256M -Xmx512M"
+      JAVA_OPTS: "-Xms1G -Xmx2G"
 ```
 
 ## LICENSE
