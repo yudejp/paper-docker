@@ -9,6 +9,7 @@ services:
   paper:
     container_name: paper
     image: ghcr.io/yudejp/paper-docker:master
+    network_mode: host
     volumes:
       - ./paper:/app
     tty: true
