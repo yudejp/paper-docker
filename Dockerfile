@@ -12,7 +12,7 @@ RUN apk add --no-cache wget jq
 ADD ./download-paper.sh /build/
 RUN /build/download-paper.sh
 
-FROM eclipse-temurin:17.0.2_8-jre-alpine
+FROM eclipse-temurin:22.0.1_8-jre-alpine
 
 # Set timezone to Asia/Tokyo
 RUN apk --update add tzdata && \
