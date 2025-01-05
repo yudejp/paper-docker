@@ -6,13 +6,13 @@ ARG UID=1000
 ARG GID=1000
 
 # Install packages required to build
-RUN apk add --no-cache wget jq
+RUN apk add --no-cache wget
 
-# Download Paper: paper.jar
-ADD ./download-paper.sh /build/
-RUN /build/download-paper.sh
+# Download server application
+WORKDIR /build
+RUN wget -O paper.jar https://ci.pufferfish.host/job/Pufferfish-1.21/27/artifact/build/libs/pufferfish-paperclip-1.21.3-R0.1-SNAPSHOT-mojmap.jar
 
-FROM eclipse-temurin:22.0.1_8-jre-alpine
+FROM eclipse-temurin:22.0.1_8-jre-alpine AS runner
 
 # Set timezone to Asia/Tokyo
 RUN apk --update add tzdata && \
@@ -28,4 +28,4 @@ WORKDIR /app
 COPY --from=builder /build/paper.jar /bin/
 
 # Run the server (PaperMC)
-CMD java -server $JAVA_OPTS -jar /bin/paper.jar
+CMD ["java", "-server", "$JAVA_OPTS", "-jar", "/bin/paper.jar"]
