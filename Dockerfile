@@ -10,7 +10,7 @@ RUN apk add --no-cache wget
 
 # Download server application
 WORKDIR /build
-RUN wget -O paper.jar https://ci.pufferfish.host/job/Pufferfish-1.21/27/artifact/build/libs/pufferfish-paperclip-1.21.3-R0.1-SNAPSHOT-mojmap.jar
+RUN wget -O paper.jar https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/75/downloads/paper-1.21.4-75.jar
 
 FROM eclipse-temurin:22.0.1_8-jre-alpine AS runner
 
