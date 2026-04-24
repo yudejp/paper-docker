@@ -10,7 +10,7 @@ RUN apk add --no-cache wget
 
 # Download server application
 WORKDIR /build
-RUN wget -O paper.jar https://fill-data.papermc.io/v1/objects/d99ef05d75304ca6a7808300354f4bcd7846e015f5c088f218113ed529d1b4f0/paper-1.21.11-113.jar
+RUN wget -O paper.jar https://fill-data.papermc.io/v1/objects/cc0948c956fa0bb1b0a399b5c8ce9c79e0a4255396fed97059e7f2ecc4e0ab12/paper-26.1.2-21.jar
 
 FROM eclipse-temurin:22.0.1_8-jre-alpine AS runner
 
